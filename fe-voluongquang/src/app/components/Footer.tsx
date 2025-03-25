@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -18,16 +19,15 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-100 py-10 container mx-auto px-4">
-            <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Cột 1: Logo và Newsletter */}
+        <footer className="bg-gray-100 py-10">
+            <div className="max-w-[1200px] mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="space-y-4">
                     <Link href="/" className="block">
                         <Image
                             src="/logo.png"
                             alt="Logo"
-                            width={150}
-                            height={50}
+                            width={330}
+                            height={130}
                         />
                     </Link>
                     <div className="flex items-center space-x-2 text-gray-700">
@@ -35,25 +35,27 @@ export default function Footer() {
                             icon={faPhone}
                             className="text-xl text-green-500"
                         />
-                        <p>
-                            <span className="block font-bold">
-                                Got Questions?
+                        <p className="text-lg text-grey-600 font-cairo">
+                            <span className="block font-bold text-lg text-grey-600 font-cairo">
+                                Có câu hỏi cho chúng tôi?
                             </span>
-                            (+84) 83 899 48 41
+                            (+84) 853 267 747
                         </p>
                     </div>
                     <div className="mt-4">
-                        <h4 className="font-semibold">Newsletter Signup</h4>
+                        <h4 className="font-cairo text-lg text-gray-600 font-bold">
+                            Thư Đăng Kí Mới
+                        </h4>
                         <form className="mt-2 flex">
                             <input
                                 type="email"
-                                placeholder="Your email here..."
-                                className="w-full p-2 border border-gray-300 rounded-l-md"
+                                placeholder="Nhập email của bạn vào đây..."
+                                className="w-full p-2 border border-gray-300 rounded-l-md font-cairo"
                             />
                             <button
                                 type="submit"
-                                className="px-4 bg-green-500 text-white rounded-r-md">
-                                Sign up
+                                className="w-[120px] px-6 bg-customGreen text-white rounded-r-md font-cairo hover:bg-green-700">
+                                Đăng kí
                             </button>
                         </form>
                     </div>
@@ -64,38 +66,47 @@ export default function Footer() {
 
                 {/* Cột 3: Thông tin liên hệ */}
                 <div className="space-y-4">
-                    <h3 className="text-lg font-bold">Transport Offices</h3>
+                    <h3 className="text-lg font-bold text-gray-600">
+                        Transport Offices
+                    </h3>
                     <ul className="space-y-3 text-gray-700">
                         <li className="flex items-start space-x-2">
                             <FontAwesomeIcon
                                 icon={faMapMarkerAlt}
-                                className="text-green-500 mt-1"
+                                className="text-gray-600 mt-1"
                             />
-                            <p>
-                                Q44 128 St. Phuoc Long A ward, Thu Duc district,
-                                Ho Chi Minh City, Viet Nam
+                            <p className="font-cairo text-gray-600">
+                                Q44 Đường 128, Phường Phước Long A, TP. Thủ Đức,
+                                TP. Hồ Chí Minh, Việt Nam
                             </p>
                         </li>
                         <li className="flex items-start space-x-2">
                             <FontAwesomeIcon
                                 icon={faPhone}
-                                className="text-green-500 mt-1"
+                                className="text-gray-600 mt-1"
                             />
-                            <p>Phone: (+84) 83 899 48 41</p>
+                            <p className="font-cairo text-gray-600">
+                                Phone: (+84) 853 267 747
+                            </p>
                         </li>
                         <li className="flex items-start space-x-2">
                             <FontAwesomeIcon
                                 icon={faEnvelopeOpen}
-                                className="text-green-500 mt-1"
+                                className="text-gray-600 mt-1"
                             />
-                            <p>Email: voluongquang@company.com</p>
+                            <p className="font-cairo text-gray-600">
+                                Email: voluongquang@company.com
+                            </p>
                         </li>
                         <li className="flex items-start space-x-2">
                             <FontAwesomeIcon
                                 icon={faClock}
-                                className="text-green-500 mt-1"
+                                className="text-gray-600 mt-1"
                             />
-                            <p>Hours: 7 Days a week from 10:00 am</p>
+                            <p className="font-cairo text-gray-600">
+                                Làm việc hàng ngày (kể cả ngày lễ).
+                                <br /> Từ 8h - 17h
+                            </p>
                         </li>
                     </ul>
 

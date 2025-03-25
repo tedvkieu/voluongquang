@@ -5,7 +5,7 @@ import ProductList from './components/Product/ProductList';
 const products = [
     {
         prd_id: '1',
-        prd_name: 'Rau Cải Xanh',
+        prd_name: 'Cá cơm chay',
         price: 250000,
         cost_price: 244000,
         unit: '1kg',

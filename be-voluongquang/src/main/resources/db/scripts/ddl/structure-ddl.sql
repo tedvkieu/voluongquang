@@ -1,9 +1,9 @@
 CREATE TABLE product (
-    prd_id VARCHAR(20) NOT NULL PRIMARY KEY,
+    prd_id VARCHAR(50) NOT NULL PRIMARY KEY,
     prd_name VARCHAR(255) NOT NULL,
-    gr_prd_id VARCHAR(20) NULL,
-    category_id VARCHAR(20) NULL,
-    brand_id VARCHAR(20) NULL,
+    gr_prd_id VARCHAR(50) NULL,
+    category_id VARCHAR(50) NULL,
+    brand_id VARCHAR(50) NULL,
     price NUMERIC(10, 2) NULL,
     cost_price NUMERIC(10, 2) NULL,
     wholesale_price NUMERIC(10, 2) NULL,
@@ -16,48 +16,48 @@ CREATE TABLE product (
 );
 
 CREATE TABLE brand (
-	brand_id varchar(20) NOT NULL PRIMARY KEY,
+	brand_id varchar(50) NOT NULL PRIMARY KEY,
 	brand_name varchar(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE category (
-	category_id varchar(20) NOT NULL PRIMARY KEY,
+	category_id varchar(50) NOT NULL PRIMARY KEY,
 	category_name varchar(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE product_group (
-	gr_prd_id varchar(20) NOT NULL PRIMARY KEY,
+	gr_prd_id varchar(50) NOT NULL PRIMARY KEY,
 	gr_prd_name varchar(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE users (
-    user_id VARCHAR(20) PRIMARY KEY,
+    user_id VARCHAR(50) PRIMARY KEY,
     full_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password TEXT NOT NULL,
-    phone VARCHAR(20) NULL,
+    phone VARCHAR(50) NULL,
     address TEXT NULL,
-    role VARCHAR(50) CHECK (role IN ('customer', 'admin')) NOT NULL,
+    role VARCHAR(50) CHECK (role IN ('CUSTOMER', 'ADMIN')) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE cart (
     cart_id SERIAL PRIMARY KEY,
-    user_id VARCHAR(20) NOT NULL UNIQUE,  -- Mỗi user chỉ có một giỏ hàng
+    user_id VARCHAR(50) NOT NULL UNIQUE,  -- Mỗi user chỉ có một giỏ hàng
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE cart_items (
     cart_id INT NOT NULL,
-    prd_id VARCHAR(20) NOT NULL,
+    prd_id VARCHAR(50) NOT NULL,
     quantity INT NOT NULL DEFAULT 1,
     PRIMARY KEY (cart_id, prd_id),  -- Đảm bảo không có sản phẩm trùng trong giỏ hàng
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
